@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%; 
+    background-color: hsl(216, 12%, 8%);
+}
+
+h1 {
+    font-size: 2rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}   
+
+p {
+    color: hsl(216, 12%, 54%);
+    font-weight: 400;
+    line-height: 150%;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rating-card {
+    width: 25vw;
+    height: 50vh;
+    padding: 2rem;
+    background: linear-gradient(hsl(213 19% 18% / 75%), hsl(213 19% 18% / 20%));
+    border-radius: 25px;
+}
+
+.circle {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    background-color:hsl(213, 19%, 18%);
+    justify-content: center;
+    align-items: center;
+}
+
+.circles-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.number-button {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: inline-flex;
+    border: none;
+    background-color: hsl(213, 19%, 18%); 
+    justify-content: center;
+    align-items: center; 
+    color: hsl(216, 12%, 54%);
+    font-weight: 700;
+}
+
+.number-button:hover {
+    height: 3rem;
+    width: 3rem;
+    background-color: hsl(217, 12%, 63%);
+    cursor: pointer;
+    color: hsl(0, 0%, 100%); 
+}
+
+.number-button:focus {
+    height: 3rem;
+    width: 3rem;
+    background-color: hsl(25 97% 53%);
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+}
+
+.active {
+    background-color: hsl(25 97% 53%);
+    color: hsl(0, 0%, 100%); 
+}
+
+.submit-button {
+    background-color: hsl(25 97% 53%);
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 1rem;
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+}
+
+.submit-button:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25 97% 53%);
+}
+
+#thank-you-card {
+    width: 25vw;
+    height: 50vh;
+    background: linear-gradient(hsl(213 19% 18% / 70%), hsl(213 19% 18% / 20%));
+    padding: 3rem 2rem 3rem 2rem;
+    border-radius: 25px;
+}
+
+#thank-you-card > img {
+    display: block;
+    margin: auto;
+    height: 15vh;
+}
+
+.rating-text {
+    margin: auto;
+    margin-top: 2rem;
+    width: fit-content;
+    background-color: hsl(213 19% 18%); 
+    color: hsl(25 97% 53%);
+    border-radius: 25px;
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+#thank-you-card > h1 {
+    text-align: center;
+}
+
+#thank-you-card > p {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.attribution { 
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 11px; 
+    text-align: center; 
+    color: hsl(0 0% 100%); 
+}
+
+.attribution a { color: hsl(25 97% 53%); }

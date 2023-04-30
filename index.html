@@ -1,49 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css" media='screen and (min-width: 1280px)' href="desktop-style.css">
+  <link rel="stylesheet" type="text/css" media='screen and (max-width: 1279px)' href="mobile-style.css">
   <title>Frontend Mentor | Interactive rating component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main>
+    <section>
+      <!-- Rating state start -->
+      <article id="rating-card">  
+        <div class="circle"><img src="images/icon-star.svg" alt=""></div>
+        <h1>How did we do?</h1>
 
-  <!-- Rating state start -->
+        <p>Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
 
-  How did we do?
+        <div class="circles-container">
+          <button id="button1" class="number-button" data-rating="1">1</button>
+          <button id="button2" class="number-button" data-rating="2">2</button>
+          <button id="button3" class="number-button" data-rating="3">3</button>
+          <button id="button4" class="number-button" data-rating="4">4</button>
+          <button id="button5" class="number-button" data-rating="5">5</button>
+        </div>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+        <button id="submit" class="submit-button">Submit</button>
+      </article>
+      <!-- Rating state end -->
 
-  1 2 3 4 5
+      <!-- thank-you-card is hidden on page load-->
+      <!-- and class="hide" gets toggled off when button is clicked -->
+      <article id="thank-you-card" class="hide">
+        <img src="images/illustration-thank-you.svg" alt="">
+        <div class="rating-text">
+        You selected <span id="display-rating"></span> out of 5
+        </div>
 
-  Submit
+        <h1>Thank you!</h1>
 
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+      </article>
+      <!-- Thank you state end -->
+    </section>
+  </main> 
+  <footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://justinmartz.github.io">Justin Martz</a>.
   </div>
-</body>
+  </footer>
+  <script>
+    // Variable into which user rating goes, and is used to display in <span> in thank-you-card
+    var ratingSelected;
+    // Debug statement
+    console.log("inital value of ratingSelected: " + ratingSelected);
+  
+    // Get each rating button into array selectedButton
+    var selectedButton = document.getElementsByClassName("number-button");
+  
+    // Add click listener to first button (id=button1)
+    selectedButton[0].addEventListener("click", function() { 
+      // If button previously had the active class...
+      if (selectedButton[0].classList.contains('active')) {
+        console.log("button 1 contains active, turning active off");
+        // then remove active class from button1
+        document.getElementById("button1").classList.remove('active');
+  
+      } else {
+        console.log("doesn't contain active, turning active on");
+        // Make the button active if not previously active
+        document.getElementById("button1").classList.add('active');
+        // If ratingSelected has a value (means a choice was previously selected)
+        if(ratingSelected) {
+          // then remove active class from previously chosen button
+          document.getElementById("button" + ratingSelected).classList.remove('active');
+          console.log("removing active from button" + ratingSelected)
+        }
+  
+        // ratingSelected is finally given value of rating from button
+        ratingSelected = selectedButton[0].dataset.rating;
+      } 
+      console.log(ratingSelected); 
+    })
+  
+    selectedButton[1].addEventListener("click", function() { 
+      if (selectedButton[1].classList.contains('active')) {
+        console.log("button 2 contains active, turning active off");
+        document.getElementById("button2").classList.toggle('active'); /* Make button inactive if previously active */
+  
+      } else {
+        console.log("doesn't contain active, turning active on");
+        document.getElementById("button2").classList.toggle('active'); /* Make the button active if not previously active*/
+        if(ratingSelected) {
+          document.getElementById("button" + ratingSelected).classList.remove('active');
+          console.log("removing active from button" + ratingSelected)
+        }
+        ratingSelected = selectedButton[1].dataset.rating;
+      } 
+      console.log(ratingSelected); 
+    })
+  
+    selectedButton[2].addEventListener("click", function() { 
+      if (selectedButton[2].classList.contains('active')) {
+        console.log("button 3 contains active, turning active off");
+        document.getElementById("button3").classList.toggle('active'); /* Make button inactive if previously active */
+  
+      } else {
+        console.log("doesn't contain active, turning active on");
+        document.getElementById("button3").classList.toggle('active'); /* Make the button active if not previously active*/
+        if(ratingSelected) {                                          /* If any button was previously select/assigned value */
+          document.getElementById("button" + ratingSelected).classList.remove('active'); /* remove active from that button */ 
+          console.log("removing active from button" + ratingSelected)
+        }
+        ratingSelected = selectedButton[2].dataset.rating;
+      }
+      console.log(ratingSelected); 
+    })
+  
+    selectedButton[3].addEventListener("click", function() { 
+      if (selectedButton[3].classList.contains('active')) {
+        console.log("button4 contains active, turning active off");
+        document.getElementById("button4").classList.toggle('active'); /* Make button inactive if previously active */
+  
+      } else {
+        console.log("doesn't contain active, turning active on");
+        document.getElementById("button4").classList.toggle('active'); /* Make the button active if not previously active*/
+        if(ratingSelected) {                                          /* If any button was previously select/assigned value */
+          document.getElementById("button" + ratingSelected).classList.remove('active'); /* remove active from that button */ 
+          console.log("removing active from button" + ratingSelected)
+        }
+        ratingSelected = selectedButton[3].dataset.rating;
+      } 
+      console.log(ratingSelected); 
+    })
+  
+    selectedButton[4].addEventListener("click", function() { 
+      if (selectedButton[4].classList.contains('active')) {
+        console.log("button4 contains active, turning active off");
+        document.getElementById("button5").classList.toggle('active'); /* Make button inactive if previously active */
+  
+      } else {
+        console.log("doesn't contain active, turning active on");
+        document.getElementById("button5").classList.toggle('active'); /* Make the button active if not previously active*/
+        if(ratingSelected) {                                          /* If any button was previously select/assigned value */
+          document.getElementById("button" + ratingSelected).classList.remove('active'); /* remove active from that button */ 
+          console.log("removing active from button" + ratingSelected)
+        }
+        ratingSelected = selectedButton[4].dataset.rating;
+      } 
+      console.log(ratingSelected); 
+    })
+  
+    // Get onclick into SUBMIT button
+    document.getElementById("submit").onclick = function show() {
+    // thank-you-card initially set to 'hide'. Toggle 'hide' class to show it.
+    document.getElementById("thank-you-card").classList.toggle('hide');
+    // Toggle 'hide' to rating-card to hide it. 
+    document.getElementById("rating-card").classList.toggle('hide');
+    // Insert ratingSelected value into <span> with id=display-rating
+    document.getElementById("display-rating").innerHTML = ratingSelected;
+  
+  };
+  </script>
+  </body>
 </html>
