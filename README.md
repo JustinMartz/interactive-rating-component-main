@@ -54,7 +54,7 @@ I got a really good lesson on hsl() and where I can and can't use alpha values. 
 
 I learned about :focus states and hope I used that appropriately in this solution.
 
-I'm trying to improve my use of semantic HTML with every challenge so with this one I styled the cards as article elements and nested those within a section. I also put the Frontend Mentor attribution in a footer. UPDATE: W3 Nu Html Checker said if I'm going to use <section> then it needs a heading, and if it doesn't need a heading then to use a div. I'll do that for the next challenge. 
+I'm trying to improve my use of semantic HTML with every challenge so with this one I styled the cards as article elements and nested those within a section. I also put the Frontend Mentor attribution in a footer. UPDATE: W3 Nu Html Checker said if I'm going to use section then it needs a heading, and if it doesn't need a heading then to use a div. I'll do that for the next challenge. 
 
 ### Continued development
 
