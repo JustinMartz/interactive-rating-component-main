@@ -29,20 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./desktop-screenshot.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
+![](./mobile-screenshot.png)
+![](./mobile-screenshot-thanks.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/JustinMartz/interactive-rating-component-main](https://github.com/JustinMartz/interactive-rating-component-main)
+- Live Site URL: [https://justinmartz.github.io/interactive-rating-component-main/](https://justinmartz.github.io/interactive-rating-component-main/)
 
 ## My process
 
@@ -60,7 +54,7 @@ I got a really good lesson on hsl() and where I can and can't use alpha values. 
 
 I learned about :focus states and hope I used that appropriately in this solution.
 
-I'm trying to improve my use of semantic HTML with every challenge so with this one I styled the cards as <article> elements and nested those within a <section>. I also put the Frontend Mentor attribution in a <footer>. UPDATE: W3 Nu Html Checker said if I'm going to use <section> then it needs a heading, and if it doesn't need a heading then to use a <div>. I'll do that for the next challenge. 
+I'm trying to improve my use of semantic HTML with every challenge so with this one I styled the cards as article elements and nested those within a section. I also put the Frontend Mentor attribution in a footer. UPDATE: W3 Nu Html Checker said if I'm going to use <section> then it needs a heading, and if it doesn't need a heading then to use a div. I'll do that for the next challenge. 
 
 ### Continued development
 
@@ -68,11 +62,12 @@ I'll continue to learn more about HTML, CSS, and JavaScript.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Assigning IDs to buttons](https://stackoverflow.com/questions/51287162/how-to-have-multiple-buttons-of-same-id-value-and-when-click-on-any-button-the-p) - Stack Overflow question about assigning IDs to buttons that helped me.
+- [How to replace div content after click](https://stackoverflow.com/questions/25735512/replace-div-content-onclick) - Stack Overflow question with a few different answers about how to do this. One answer illuminated for me the idea of adding and removing a "show" or "hide" class to the div, which is just a class with 'display: none' inside of it. 
+- [JavaScript to make a div visible after being hidden](https://stackoverflow.com/questions/38051092/how-to-make-visible-a-div-which-is-initially-hidden-by-clicking-on-button-using) - Answers in this Stack Overflow question are the base for the script I wrote.
+- [Using data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) - Mozilla Developer Network page on using data attributes in HTML and how to access them in JavaScript. This is the route I took for assigning values to each rating button.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Justin Martz on GitHub Pages](https://justinmartz.github.io)
+- Frontend Mentor - [@JustinMartz](https://www.frontendmentor.io/profile/JustinMartz)
